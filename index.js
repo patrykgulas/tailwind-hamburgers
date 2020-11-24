@@ -1,19 +1,24 @@
 module.exports = function ({ addComponents }) {
   const sizes = {
-    sm: {
-      hamburgerWidth: 20,
-      spacing: 3,
+    4: {
+      hamburgerWidth: 16,
+      spacing: 2,
       barHeight: 2,
     },
-    md: {
-      hamburgerWidth: 30,
-      spacing: 4,
+    6: {
+      hamburgerWidth: 24,
+      spacing: 3,
       barHeight: 3,
     },
-    lg: {
-      hamburgerWidth: 40,
-      spacing: 6,
+    8: {
+      hamburgerWidth: 32,
+      spacing: 4,
       barHeight: 4,
+    },
+    12: {
+      hamburgerWidth: 48,
+      spacing: 6,
+      barHeight: 6,
     },
   }
   const barRadius = 4
@@ -41,7 +46,7 @@ module.exports = function ({ addComponents }) {
         opacity: 0.7,
       },
     },
-    '.tham--squeeze': {
+    '.tham-e-squeeze': {
       '.tham-inner': {
         transitionTimingFunction: 'cubic-bezier(.55,.055,.675,.19)',
         transitionDuration: '75ms',
@@ -54,77 +59,8 @@ module.exports = function ({ addComponents }) {
         },
       },
     },
-    '.tham--sm': {
-      width: sizes.sm.hamburgerWidth,
-      height: sizes.sm.barHeight * 3 + sizes.sm.spacing * 2,
-      '.tham-box': {
-        width: sizes.sm.hamburgerWidth,
-        height: sizes.sm.barHeight * 3 + sizes.sm.spacing * 2,
-      },
-      '.tham-inner': {
-        marginTop: sizes.sm.barHeight / -2,
-        width: sizes.sm.hamburgerWidth,
-        height: sizes.sm.barHeight,
-        '&::before': {
-          width: sizes.sm.hamburgerWidth,
-          height: sizes.sm.barHeight,
-          top: (sizes.sm.spacing + sizes.sm.barHeight) * -1,
-        },
-        '&::after': {
-          width: sizes.sm.hamburgerWidth,
-          height: sizes.sm.barHeight,
-          bottom: (sizes.sm.spacing + sizes.sm.barHeight) * -1,
-        },
-      },
-    },
-    '.tham--md': {
-      width: sizes.md.hamburgerWidth,
-      height: sizes.md.barHeight * 3 + sizes.md.spacing * 2,
-      '.tham-box': {
-        width: sizes.md.hamburgerWidth,
-        height: sizes.md.barHeight * 3 + sizes.md.spacing * 2,
-      },
-      '.tham-inner': {
-        marginTop: sizes.md.barHeight / -2,
-        width: sizes.md.hamburgerWidth,
-        height: sizes.md.barHeight,
-        '&::before': {
-          width: sizes.md.hamburgerWidth,
-          height: sizes.md.barHeight,
-          top: (sizes.md.spacing + sizes.md.barHeight) * -1,
-        },
-        '&::after': {
-          width: sizes.md.hamburgerWidth,
-          height: sizes.md.barHeight,
-          bottom: (sizes.md.spacing + sizes.md.barHeight) * -1,
-        },
-      },
-    },
-    '.tham--lg': {
-      width: sizes.lg.hamburgerWidth,
-      height: sizes.lg.barHeight * 3 + sizes.lg.spacing * 2,
-      '.tham-box': {
-        width: sizes.lg.hamburgerWidth,
-        height: sizes.lg.barHeight * 3 + sizes.lg.spacing * 2,
-      },
-      '.tham-inner': {
-        marginTop: sizes.lg.barHeight / -2,
-        width: sizes.lg.hamburgerWidth,
-        height: sizes.lg.barHeight,
-        '&::before': {
-          width: sizes.lg.hamburgerWidth,
-          height: sizes.lg.barHeight,
-          top: (sizes.lg.spacing + sizes.lg.barHeight) * -1,
-        },
-        '&::after': {
-          width: sizes.lg.hamburgerWidth,
-          height: sizes.lg.barHeight,
-          bottom: (sizes.lg.spacing + sizes.lg.barHeight) * -1,
-        },
-      },
-    },
     '.tham-active': {
-      '&.tham--squeeze': {
+      '&.tham-e-squeeze': {
         '.tham-inner': {
           transitionDelay: '.12s',
           transitionTimingFunction: 'cubic-bezier(.215,.61,.355,1)',
@@ -166,6 +102,32 @@ module.exports = function ({ addComponents }) {
         ...baseTransition,
       },
     },
+  }
+
+  for (const size in sizes) {
+    hamburgers[`.tham-w-${size}`] = {
+      width: sizes[size].hamburgerWidth,
+      height: sizes[size].barHeight * 3 + sizes[size].spacing * 2,
+      '.tham-box': {
+        width: sizes[size].hamburgerWidth,
+        height: sizes[size].barHeight * 3 + sizes[size].spacing * 2,
+      },
+      '.tham-inner': {
+        marginTop: sizes[size].barHeight / -2,
+        width: sizes[size].hamburgerWidth,
+        height: sizes[size].barHeight,
+        '&::before': {
+          width: sizes[size].hamburgerWidth,
+          height: sizes[size].barHeight,
+          top: (sizes[size].spacing + sizes[size].barHeight) * -1,
+        },
+        '&::after': {
+          width: sizes[size].hamburgerWidth,
+          height: sizes[size].barHeight,
+          bottom: (sizes[size].spacing + sizes[size].barHeight) * -1,
+        },
+      },
+    }
   }
 
   addComponents(hamburgers)

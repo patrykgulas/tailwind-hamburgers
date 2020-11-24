@@ -1,0 +1,23 @@
+{
+  "name": "tailwind-hamburgers",
+  "version": "1.0.0",
+  "description": "Hamburger menus built with Tailwind CSS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrickgulas/tailwind-hamburgers.git"
+  },
+  "keywords": [
+    "menu",
+    "hamburger",
+    "hamburgers",
+    "tailwind",
+    "tailwindcss"
+  ],
+  "author": "Patrick Gulas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/patrickgulas/tailwind-hamburgers/issues"
+  },
+  "homepage": "https://github.com/patrickgulas/tailwind-hamburgers#readme"
+}

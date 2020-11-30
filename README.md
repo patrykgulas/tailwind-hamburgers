@@ -1,6 +1,6 @@
 # Tailwind Hamburgers
 
-Hamburger menus built with Tailwind CSS.
+Zero-dependency, hamburger menus built with Tailwind CSS.
 
 ## Usage
 

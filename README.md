@@ -50,5 +50,10 @@ Available values are: `tham-w-4`, `tham-w-6`, `tham-w-8`, `tham-w-12`.
 
 You can set a color of hamburger menu by adding class to element with `tham-inner` class name. For example: `bg-indigo-500`, `bg-green-300`, `bg-gray-900`.
 
+## Credits
+
+This project is a port for [Jonathan Suh project](https://jonsuh.com/hamburgers), huge kudos to him!
+
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)

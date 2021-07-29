@@ -2,6 +2,10 @@
 
 Zero-dependency, hamburger menus built with Tailwind CSS.
 
+## Demo
+
+You can check out the demo [here](https://patrickgulas.com/hamburgers).
+
 ## Usage
 
 1. Install a plugin

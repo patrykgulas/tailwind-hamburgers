@@ -2,7 +2,7 @@
   "name": "tailwind-hamburgers",
   "version": "1.1.2",
   "description": "Hamburger menus built with Tailwind CSS",
-  "main": "index.js",
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/patrykgulas/tailwind-hamburgers.git"
@@ -14,10 +14,33 @@
     "tailwind",
     "tailwindcss"
   ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
   "author": "Patryk Gulas",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/patrykgulas/tailwind-hamburgers/issues"
   },
-  "homepage": "https://patrykgulas.com/hamburgers"
+  "homepage": "https://patrykgulas.com/hamburgers",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.2",
+    "classnames": "^2.3.1",
+    "next": "^12.1.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "tailwind-hamburgers": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.29",
+    "@types/react": "^18.0.8",
+    "autoprefixer": "^10.4.5",
+    "postcss": "^8.4.12",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^4.6.3"
+  }
 }

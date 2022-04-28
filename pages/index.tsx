@@ -1,3 +1,5 @@
+import Head from "next/head";
+import Script from "next/script";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { ComponentView, GithubLogo, NPMLogo } from "../components";
@@ -32,6 +34,32 @@ function HomePage() {
 
   return (
     <div>
+      <Head>
+        <title>Tailwind Hamburgers</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="author" content="Patryk Gulas" />
+        <meta
+          name="description"
+          content="Hamburger menus built with Tailwind CSS"
+        />
+        <meta
+          name="keywords"
+          content="menu, hamburger, hamburgers, tailwind, tailwindcss"
+        />
+      </Head>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-31LVJCGZFZ"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-31LVJCGZFZ');
+        `}
+      </Script>
       <div className="bg-gray-100 h-16 flex items-center justify-between">
         <div className="max-w-4xl mx-auto w-full flex items-center justify-between px-4">
           <div className="font-semibold">Tailwind Hamburgers</div>

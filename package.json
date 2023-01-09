@@ -7,7 +7,9 @@
   ],
   "packageManager": "npm@8.19.2",
   "scripts": {
-    "dev": "turbo run dev"
+    "dev": "turbo run dev",
+    "add-package": "changeset add",
+    "publish-package": "changeset publish"
   },
   "devDependencies": {
     "turbo": "^1.6.3"

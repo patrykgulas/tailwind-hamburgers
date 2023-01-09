@@ -2,7 +2,7 @@ const baseStyles = require("./base");
 const types = require("./types");
 const sizes = require("./sizes");
 
-module.exports = function({ addComponents }) {
+module.exports = function ({ addComponents }) {
   let hamburgers = {
     ...baseStyles(),
   };

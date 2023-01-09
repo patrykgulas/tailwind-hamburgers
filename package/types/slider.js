@@ -22,8 +22,9 @@ const styles = ({ size, barHeight, barWidth, spacing }) => {
         ".tham-inner": {
           transform: `translate3d(0, ${yOffset}px, 0) rotate(45deg)`,
           "&::before": {
-            transform: `rotate(-45deg) translate3d(${barWidth /
-              -7}px, ${spacing * -1}px, 0)`,
+            transform: `rotate(-45deg) translate3d(${barWidth / -7}px, ${
+              spacing * -1
+            }px, 0)`,
             opacity: 0,
           },
           "&::after": {

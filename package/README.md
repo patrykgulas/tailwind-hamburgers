@@ -48,11 +48,23 @@ Toggle `tham-active` class on the element with `tham` class name.
 
 You can set a size of hamburger menu by adding class to element with `tham` class name.
 
-Available values are: `tham-w-4`, `tham-w-6`, `tham-w-8`, `tham-w-12`.
+| Class | Properties |
+|---|---|
+| tham-w-4  | height: 16px; width: 10px; |
+| tham-w-5  | height: 20px; width: 12.5px; |
+| tham-w-6  | height: 24px; width: 15px; |
+| tham-w-7  | height: 28px; width: 17.5px; |
+| tham-w-8  | height: 32px; width: 20px; |
+| tham-w-9  | height: 36px; width: 22.5px; |
+| tham-w-10 | height: 40px; width: 25px; |
+| tham-w-11 | height: 44px; width: 27.5px; |
+| tham-w-12 | height: 48px; width: 30px; |
 
 ### Color
 
 You can set a color of hamburger menu by adding class to element with `tham-inner` class name. For example: `bg-indigo-500`, `bg-green-300`, `bg-gray-900`.
+
+[See full documentation about background colors](https://tailwindcss.com/docs/background-color)
 
 ## Credits
 

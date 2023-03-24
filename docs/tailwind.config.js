@@ -6,5 +6,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require("tailwind-hamburgers"), require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("tailwind-hamburgers")],
 };

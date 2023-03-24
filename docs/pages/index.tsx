@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import Head from "next/head";
 import Script from "next/script";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -29,6 +30,71 @@ function HomePage() {
     {
       name: "Spin",
       class: "spin",
+    },
+  ];
+  const sizeClasses = [
+    {
+      class: "tham-w-4",
+      properties: {
+        height: "16px",
+        width: "10px",
+      },
+    },
+    {
+      class: "tham-w-5",
+      properties: {
+        height: "20px",
+        width: "12.5px",
+      },
+    },
+    {
+      class: "tham-w-6",
+      properties: {
+        height: "24px",
+        width: "15px",
+      },
+    },
+    {
+      class: "tham-w-7",
+      properties: {
+        height: "28px",
+        width: "17.5px",
+      },
+    },
+    {
+      class: "tham-w-8",
+      properties: {
+        height: "32px",
+        width: "20px",
+      },
+    },
+    {
+      class: "tham-w-9",
+      properties: {
+        height: "36px",
+        width: "22.5px",
+      },
+    },
+    {
+      class: "tham-w-10",
+      properties: {
+        height: "40px",
+        width: "25px",
+      },
+    },
+    {
+      class: "tham-w-11",
+      properties: {
+        height: "44px",
+        width: "27.5px",
+      },
+    },
+    {
+      class: "tham-w-12",
+      properties: {
+        height: "48px",
+        width: "30px",
+      },
     },
   ];
 
@@ -130,22 +196,32 @@ module.exports = {
           You can set a size of hamburger menu by adding class to element with{" "}
           <b>tham</b> class.
         </p>
-        <p className="mt-2">Available values are:</p>
 
-        <ul>
-          <li>
-            <b>tham-w-4</b>
-          </li>
-          <li>
-            <b>tham-w-6</b>
-          </li>
-          <li>
-            <b>tham-w-8</b>
-          </li>
-          <li>
-            <b>tham-w-12</b>
-          </li>
-        </ul>
+        <table className="w-full text-left border-collapse">
+          <thead className="border-none">
+            <tr>
+              <th className="sticky z-10 top-0 text-sm leading-6 font-semibold text-slate-700 p-0">
+                <div className="py-2 pr-2 border-b border-slate-200">Class</div>
+              </th>
+              <th className="sticky z-10 top-0 text-sm leading-6 font-semibold text-slate-700 p-0">
+                <div className="py-2 border-b border-slate-200">Properties</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody className="align-baseline">
+            {sizeClasses.map((size) => (
+              <tr key={size.class}>
+                <td className="py-2 pr-2 font-mono font-medium text-xs leading-6 text-gray-600 whitespace-nowrap">
+                  {size.class}
+                </td>
+                <td className="flex space-x-6 py-2 pl-2 font-mono text-xs leading-6 text-gray-400 whitespace-pre">
+                  <span>height: {size.properties.height};</span>
+                  <span>width: {size.properties.width};</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
         <h3>Color</h3>
 
@@ -154,6 +230,14 @@ module.exports = {
           <b>tham-inner</b> class name. For example: bg-indigo-500,
           bg-green-300, bg-gray-900.
         </p>
+
+        <a
+          className="text-sm"
+          href="https://tailwindcss.com/docs/background-color"
+          target="_blank"
+        >
+          See full documentation about background colors
+        </a>
       </div>
 
       <div className="bg-gray-100 p-8 text-center text-sm text-gray-600">

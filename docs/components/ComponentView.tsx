@@ -30,7 +30,7 @@ export const ComponentView = ({ title, name }: ComponentViewProps) => {
     >
       <div>
         <div className="flex items-center justify-between">
-          <div className="font-medium text-gray-900">{title}</div>
+          <div className="font-medium">{title}</div>
           <HeaderMenu />
         </div>
         <div className="mt-4">

@@ -1,9 +1,9 @@
-import classNames from "classnames";
 import Head from "next/head";
 import Script from "next/script";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { ComponentView, GithubLogo, NPMLogo } from "../components";
+import { ComponentView } from "../components";
+import { LandingHeader } from "../components/LandingHeader";
+import { LandingHero } from "../components/LandingHero";
+import { SyntaxHighlighter } from "../components/SyntaxHighlighter";
 
 function HomePage() {
   const variants = [
@@ -16,6 +16,10 @@ function HomePage() {
       class: "squeeze",
     },
     {
+      name: "Spin",
+      class: "spin",
+    },
+    {
       name: "Arrow",
       class: "arrow",
     },
@@ -26,10 +30,6 @@ function HomePage() {
     {
       name: "Arrow Turn",
       class: "arrow-turn",
-    },
-    {
-      name: "Spin",
-      class: "spin",
     },
   ];
   const sizeClasses = [
@@ -126,50 +126,53 @@ function HomePage() {
           gtag('config', 'G-31LVJCGZFZ');
         `}
       </Script>
-      <div className="bg-gray-100 h-16 flex items-center justify-between">
-        <div className="max-w-4xl mx-auto w-full flex items-center justify-between px-4">
-          <div className="font-semibold">Tailwind Hamburgers</div>
-          <div className="flex items-center justify-center space-x-2 text-sm">
-            <a
-              className="hover:bg-gray-200 p-2 rounded-md h-12 w-12 flex items-center justify-center"
-              href="https://github.com/patrykgulas/tailwind-hamburgers"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <GithubLogo className="h-6 w-auto" />
-            </a>
-            <a
-              className="hover:bg-gray-200 p-2 rounded-md h-12 w-12 flex items-center justify-center"
-              href="https://www.npmjs.com/package/tailwind-hamburgers"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <NPMLogo className="h-9 w-auto" />
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <div className="prose sm:prose-sm md:prose-md lg:prose-lg mx-auto my-6 sm:my-12 px-4">
-        <h2>Getting started</h2>
+      <LandingHeader />
+      <LandingHero />
+
+      <div
+        className={`
+          prose 
+          prose-invert 
+          text-slate-400 
+          prose-headings:scroll-mt-28 
+          prose-headings:font-display 
+          prose-headings:font-normal 
+          lg:prose-headings:scroll-mt-[8.5rem] 
+          prose-lead:text-slate-400 
+          prose-a:font-semibold 
+          prose-a:text-sky-400 
+          prose-a:no-underline 
+          [--tw-prose-background:theme(colors.slate.900)] 
+          prose-a:shadow-[inset_0_calc(-1*var(--tw-prose-underline-size,2px))_0_0_var(--tw-prose-underline,theme(colors.sky.800))] 
+          hover:prose-a:[--tw-prose-underline-size:6px] 
+          prose-pre:rounded-xl 
+          prose-pre:bg-slate-800/60 
+          prose-pre:shadow-none 
+          prose-pre:ring-1 
+          prose-pre:ring-slate-300/10 
+          prose-hr:border-slate-800 
+          min-w-0 
+          max-w-2xl 
+          mx-auto 
+          my-6 
+          sm:my-12 
+          px-4
+        `}
+      >
+        <h2 id="getting-started">Getting started</h2>
 
         <h3>Installation</h3>
 
         <div>
-          <SyntaxHighlighter language="markup" style={dracula}>
-            {`npm install tailwind-hamburgers --save`}
-          </SyntaxHighlighter>
-        </div>
-        <div className="text-gray-600">or</div>
-        <div>
-          <SyntaxHighlighter language="markup" style={dracula}>
-            {`yarn add tailwind-hamburgers`}
+          <SyntaxHighlighter language="shell">
+            {`npm install tailwind-hamburgers -S`}
           </SyntaxHighlighter>
         </div>
 
         <h3>Add a plugin to Tailwind</h3>
 
-        <SyntaxHighlighter language="javascript" style={dracula}>
+        <SyntaxHighlighter language="javascript">
           {`// tailwind.config.js
 module.exports = {
   plugins: [require('tailwind-hamburgers')],
@@ -197,31 +200,35 @@ module.exports = {
           <b>tham</b> class.
         </p>
 
-        <table className="w-full text-left border-collapse">
-          <thead className="border-none">
-            <tr>
-              <th className="sticky z-10 top-0 text-sm leading-6 font-semibold text-slate-700 p-0">
-                <div className="py-2 pr-2 border-b border-slate-200">Class</div>
-              </th>
-              <th className="sticky z-10 top-0 text-sm leading-6 font-semibold text-slate-700 p-0">
-                <div className="py-2 border-b border-slate-200">Properties</div>
-              </th>
-            </tr>
-          </thead>
-          <tbody className="align-baseline">
-            {sizeClasses.map((size) => (
-              <tr key={size.class}>
-                <td className="py-2 pr-2 font-mono font-medium text-xs leading-6 text-gray-600 whitespace-nowrap">
-                  {size.class}
-                </td>
-                <td className="flex space-x-6 py-2 pl-2 font-mono text-xs leading-6 text-gray-400 whitespace-pre">
-                  <span>height: {size.properties.height};</span>
-                  <span>width: {size.properties.width};</span>
-                </td>
+        <div className="max-w-full overflow-x-auto">
+          <table className="w-full text-left border-collapse m-0">
+            <thead className="border-none">
+              <tr>
+                <th className="sticky z-10 top-0 text-sm leading-6 font-semibold p-0">
+                  <div className="py-2 border-b border-slate-700">Class</div>
+                </th>
+                <th className="sticky z-10 top-0 text-sm leading-6 font-semibold p-0">
+                  <div className="py-2 border-b border-slate-700">
+                    Properties
+                  </div>
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="align-baseline">
+              {sizeClasses.map((size) => (
+                <tr key={size.class}>
+                  <td className="min-w-[130px] py-2 font-mono font-medium text-xs leading-6 text-slate-500 whitespace-nowrap">
+                    {size.class}
+                  </td>
+                  <td className="flex space-x-6 px-0 py-2 font-mono text-xs leading-6 text-slate-400 whitespace-pre">
+                    <span>height: {size.properties.height};</span>
+                    <span>width: {size.properties.width};</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
         <h3>Color</h3>
 
@@ -240,10 +247,12 @@ module.exports = {
         </a>
       </div>
 
-      <div className="bg-gray-100 p-8 text-center text-sm text-gray-600">
+      <div className="p-8 text-center text-sm text-slate-500">
         <div className="flex items-center justify-center space-x-2">
-          <div>
-            Built by{" "}
+          <div className="flex items-center space-y-1 sm:space-y-0 sm:space-x-1 flex-col sm:flex-row">
+            <div className="flex items-center space-x-2 whitespace-nowrap">
+              <div>Created with</div> <div>☕</div> <div>in hand by</div>
+            </div>
             <a
               className="hover:underline"
               href="https://twitter.com/patrykgulas"
@@ -251,17 +260,6 @@ module.exports = {
               rel="noreferrer"
             >
               <b>@patrykgulas</b>
-            </a>
-          </div>
-          <div>·</div>
-          <div>
-            <a
-              className="hover:underline"
-              href="https://patrykgulas.com/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              patrykgulas.com
             </a>
           </div>
         </div>

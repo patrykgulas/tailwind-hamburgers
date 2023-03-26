@@ -1,7 +1,6 @@
 import classNames from "classnames";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { ComponentViewContext } from "./ComponentView";
+import { SyntaxHighlighter } from "./SyntaxHighlighter";
 
 type ComponentCodeProps = {
   language: string;
@@ -40,12 +39,12 @@ export default function Example() {
   return (
     <ComponentViewContext.Consumer>
       {({ language, setLanguage }) => (
-        <div className="bg-gray-800 rounded-xl">
-          <div className="flex font-semibold sm:hidden">
+        <div className="bg-slate-800/60 border border-slate-800 rounded-xl">
+          <div className="flex font-semibold sm:hidden border-b border-slate-700/50">
             <div
               className={classNames("border-b-2 px-5 py-3", {
                 "border-white text-white": language === "html",
-                "border-transparent text-gray-400": language !== "html",
+                "border-transparent text-slate-500": language !== "html",
               })}
               onClick={() => setLanguage("html")}
             >
@@ -54,7 +53,7 @@ export default function Example() {
             <div
               className={classNames("border-b-2 px-5 py-3", {
                 "border-white text-white": language === "tsx",
-                "border-transparent text-gray-400": language !== "tsx",
+                "border-transparent text-slate-500": language !== "tsx",
               })}
               onClick={() => setLanguage("tsx")}
             >
@@ -62,9 +61,8 @@ export default function Example() {
             </div>
           </div>
           <SyntaxHighlighter
-            customStyle={{ backgroundColor: "transparent" }}
             language={language}
-            style={dracula}
+            className="bg-transparent border-none"
           >
             {code[language]}
           </SyntaxHighlighter>

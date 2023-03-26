@@ -6,7 +6,7 @@ export const Dropdown = () => {
       {({ language, setLanguage }) => (
         <div className="relative hidden sm:block ml-2.5">
           <select
-            className="bg-transparent text-gray-900 rounded-lg border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium focus:shadow-none focus-visible:ring-2 focus-visible:ring-teal-500 appearance-none"
+            className="cursor-pointer bg-transparent rounded-lg border-0 form-select p-0 pl-3.5 pr-[1.875rem] h-9 w-full sm:text-sm font-medium focus:shadow-none focus-visible:ring-2 focus-visible:ring-sky-500 appearance-none focus:outline-none"
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
           >

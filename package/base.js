@@ -8,7 +8,7 @@ const baseTransition = {
 const part = {
   position: "absolute",
   display: "block",
-  borderRadius: barRadius,
+  borderRadius: barRadius + "px",
 };
 
 const baseStyles = () => ({

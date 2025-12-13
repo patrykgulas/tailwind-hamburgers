@@ -2,8 +2,8 @@
   "name": "tailwind-hamburgers-monorepo",
   "version": "1.0.0",
   "workspaces": [
-    "docs",
-    "package"
+    "package",
+    "docs"
   ],
   "packageManager": "npm@10.8.2",
   "scripts": {

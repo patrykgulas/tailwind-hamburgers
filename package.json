@@ -5,14 +5,14 @@
     "docs",
     "package"
   ],
-  "packageManager": "npm@8.19.2",
+  "packageManager": "npm@10.8.2",
   "scripts": {
     "dev": "turbo run dev",
     "add-package": "changeset add",
     "publish-package": "changeset publish"
   },
   "devDependencies": {
-    "turbo": "^1.6.3"
+    "turbo": "^2.6.3"
   },
   "dependencies": {
     "@changesets/cli": "^2.26.0"

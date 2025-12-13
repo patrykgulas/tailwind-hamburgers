@@ -30,4 +30,12 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography"), require("tailwind-hamburgers")],
+  safelist: [
+    'tham-e-slider',
+    'tham-e-squeeze',
+    'tham-e-spin',
+    'tham-e-arrow',
+    'tham-e-arrow-alt',
+    'tham-e-arrow-turn'
+  ],
 };

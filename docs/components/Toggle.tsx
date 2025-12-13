@@ -20,9 +20,9 @@ type OptionProps = PropsWithChildren & { active: boolean };
 const Option: FunctionComponent<OptionProps> = ({ active, children }) => (
   <button
     className={classNames({
-      "flex items-center rounded-md py-[0.4375rem] px-4 text-sm font-semibold bg-slate-700/90 shadow text-slate-200":
+      "flex items-center rounded-md py-1.75 px-4 text-sm font-semibold bg-slate-700/90 shadow-sm text-slate-200":
         active,
-      "flex items-center rounded-md py-[0.4375rem] px-4 text-sm font-semibold text-slate-500":
+      "flex items-center rounded-md py-1.75 px-4 text-sm font-semibold text-slate-500":
         !active,
     })}
   >

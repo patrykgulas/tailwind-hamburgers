@@ -1,54 +1,59 @@
+const plugin = require("tailwindcss/plugin");
 const baseStyles = require("./base");
 const types = require("./types");
 const sizes = require("./sizes");
 
-module.exports = function ({ addComponents }) {
-  let hamburgers = {
-    ...baseStyles(),
-  };
+module.exports = plugin(function ({ addComponents, matchComponents }) {
+  addComponents(baseStyles());
 
-  for (const size in sizes) {
-    for (const type in types) {
-      const stylesFn = types[type];
-      const sizeConfig = sizes[size];
-
-      hamburgers = {
-        ...hamburgers,
-        ...stylesFn({
-          size,
-          barHeight: sizeConfig.barHeight,
-          barWidth: sizeConfig.hamburgerWidth,
-          spacing: sizeConfig.spacing,
-        }),
-      };
+  matchComponents(
+    {
+      "tham-e": (value) => {
+        if (!types[value]) return null;
+        return types[value](value); // The types functions typically wrap styles in the selector, but we need to verify how they return data.
+      },
+    },
+    {
+      values: Object.keys(types).reduce((acc, key) => {
+        return { ...acc, [key]: key }
+      }, {})
     }
-  }
+  );
 
-  for (const size in sizes) {
-    hamburgers[`.tham-w-${size}`] = {
-      width: sizes[size].hamburgerWidth,
-      height: sizes[size].barHeight * 3 + sizes[size].spacing * 2,
-      ".tham-box": {
-        width: sizes[size].hamburgerWidth,
-        height: sizes[size].barHeight * 3 + sizes[size].spacing * 2,
-      },
-      ".tham-inner": {
-        marginTop: sizes[size].barHeight / -2,
-        width: sizes[size].hamburgerWidth,
-        height: sizes[size].barHeight,
-        "&::before": {
-          width: sizes[size].hamburgerWidth,
-          height: sizes[size].barHeight,
-          top: (sizes[size].spacing + sizes[size].barHeight) * -1,
-        },
-        "&::after": {
-          width: sizes[size].hamburgerWidth,
-          height: sizes[size].barHeight,
-          bottom: (sizes[size].spacing + sizes[size].barHeight) * -1,
-        },
-      },
-    };
-  }
+  matchComponents(
+    {
+      "tham-w": (value) => {
+        const sizeConfig = sizes[value];
+        if (!sizeConfig) return null;
 
-  addComponents(hamburgers);
-};
+        return {
+          "--tham-w": sizeConfig.hamburgerWidth + "px",
+          "--tham-h-bar": sizeConfig.barHeight + "px",
+          "--tham-spacing": sizeConfig.spacing + "px",
+          width: sizeConfig.hamburgerWidth + "px",
+          height: (sizeConfig.barHeight * 3 + sizeConfig.spacing * 2) + "px",
+          ".tham-box": {
+            width: sizeConfig.hamburgerWidth + "px",
+            height: (sizeConfig.barHeight * 3 + sizeConfig.spacing * 2) + "px",
+          },
+          ".tham-inner": {
+            marginTop: (sizeConfig.barHeight / -2) + "px",
+            width: sizeConfig.hamburgerWidth + "px",
+            height: sizeConfig.barHeight + "px",
+            "&::before": {
+              width: sizeConfig.hamburgerWidth + "px",
+              height: sizeConfig.barHeight + "px",
+              top: ((sizeConfig.spacing + sizeConfig.barHeight) * -1) + "px",
+            },
+            "&::after": {
+              width: sizeConfig.hamburgerWidth + "px",
+              height: sizeConfig.barHeight + "px",
+              bottom: ((sizeConfig.spacing + sizeConfig.barHeight) * -1) + "px",
+            },
+          },
+        };
+      },
+    },
+    { values: Object.keys(sizes).reduce((acc, key) => ({ ...acc, [key]: key }), {}) }
+  );
+});

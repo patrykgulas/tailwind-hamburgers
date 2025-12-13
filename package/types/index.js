@@ -9,8 +9,8 @@ const types = {
   slider,
   squeeze,
   arrow,
-  arrowAlt,
-  arrowTurn,
+  'arrow-alt': arrowAlt,
+  'arrow-turn': arrowTurn,
   spin,
 };
 

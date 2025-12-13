@@ -1,34 +1,27 @@
-const typeSelector = ".tham-e-slider";
-
-const styles = ({ size, barHeight, barWidth, spacing }) => {
-  const yOffset = spacing + barHeight;
-  const sizeSelector = `.tham-w-${size}`;
-
+const styles = () => {
   return {
-    [`.tham${sizeSelector}${typeSelector}`]: {
+    "&.tham": {
       ".tham-inner": {
-        top: barHeight / 2,
+        top: "calc(var(--tham-h-bar) / 2)",
         "&::before": {
-          top: barHeight + spacing,
+          top: "calc(var(--tham-h-bar) + var(--tham-spacing))",
           transitionProperty: "transform, opacity",
           transitionTimingFunction: "ease",
           transitionDuration: "0.15s",
         },
         "&::after": {
-          top: barHeight * 2 + spacing * 2,
+          top: "calc(var(--tham-h-bar) * 2 + var(--tham-spacing) * 2)",
         },
       },
       "&.tham-active": {
         ".tham-inner": {
-          transform: `translate3d(0, ${yOffset}px, 0) rotate(45deg)`,
+          transform: `translate3d(0, calc(var(--tham-spacing) + var(--tham-h-bar)), 0) rotate(45deg)`,
           "&::before": {
-            transform: `rotate(-45deg) translate3d(${barWidth / -7}px, ${
-              spacing * -1
-            }px, 0)`,
+            transform: `rotate(-45deg) translate3d(calc(var(--tham-w) / -7), calc(var(--tham-spacing) * -1), 0)`,
             opacity: 0,
           },
           "&::after": {
-            transform: `translate3d(0, ${yOffset * -2}px, 0) rotate(-90deg)`,
+            transform: `translate3d(0, calc((var(--tham-spacing) + var(--tham-h-bar)) * -2), 0) rotate(-90deg)`,
           },
         },
       },

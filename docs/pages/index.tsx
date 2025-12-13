@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Script from "next/script";
 import { ComponentView } from "../components";
-import { LandingHeader } from "../components/LandingHeader";
 import { LandingHero } from "../components/LandingHero";
 import { SyntaxHighlighter } from "../components/SyntaxHighlighter";
 

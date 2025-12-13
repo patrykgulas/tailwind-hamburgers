@@ -1,5 +1,5 @@
 export const LandingHero = () => (
-  <div className="overflow-hidden bg-slate-900 -mb-32 mt-[-4.5rem] pb-32 pt-[4.5rem] lg:mt-[-4.75rem] lg:pt-[4.75rem]">
+  <div className="overflow-hidden bg-slate-900 -mb-32 -mt-18 pb-32 pt-18 lg:-mt-19 lg:pt-19">
     <div className="py-16 sm:px-2 lg:relative lg:py-20 lg:px-0">
       <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-y-16 gap-x-8 px-4 lg:max-w-8xl lg:grid-cols-2 lg:px-8 xl:gap-x-16 xl:px-12">
         <div className="relative z-10 md:text-center lg:text-left">
@@ -12,7 +12,7 @@ export const LandingHero = () => (
             style={{ color: "transparent" }}
           />
           <div className="relative">
-            <p className="inline bg-gradient-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
+            <p className="inline bg-linear-to-r from-indigo-200 via-sky-400 to-indigo-200 bg-clip-text font-display text-5xl tracking-tight text-transparent">
               Tailwind hamburger menus.
             </p>
             <p className="mt-3 text-2xl tracking-tight text-slate-400">
@@ -21,13 +21,13 @@ export const LandingHero = () => (
             </p>
             <div className="mt-8 flex gap-4 md:justify-center lg:justify-start">
               <a
-                className="rounded-full bg-sky-300 py-2 px-4 text-sm font-semibold text-slate-900 hover:bg-sky-200 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300/50 active:bg-sky-500 transition-colors"
+                className="rounded-full bg-sky-300 py-2 px-4 text-sm font-semibold text-slate-900 hover:bg-sky-200 focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300/50 active:bg-sky-500 transition-colors"
                 href="#getting-started"
               >
                 Get started
               </a>
               <a
-                className="rounded-full bg-slate-800 py-2 px-4 text-sm font-medium text-white hover:bg-slate-700 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 active:text-slate-400 transition-colors ring-1 ring-slate-700/50"
+                className="rounded-full bg-slate-800 py-2 px-4 text-sm font-medium text-white hover:bg-slate-700 focus:outline-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/50 active:text-slate-400 transition-colors ring-1 ring-slate-700/50"
                 aria-label="GitHub"
                 href="https://github.com/patrykgulas/tailwind-hamburgers"
                 target="_blank"
@@ -38,7 +38,7 @@ export const LandingHero = () => (
           </div>
         </div>
         <div className="relative lg:static xl:pl-10">
-          <div className="absolute inset-x-[-50vw] -top-32 -bottom-48 [mask-image:linear-gradient(transparent,white,white)] dark:[mask-image:linear-gradient(transparent,white,transparent)] lg:left-[calc(50%+14rem)] lg:right-0 lg:-top-32 lg:-bottom-32 lg:[mask-image:none] lg:dark:[mask-image:linear-gradient(white,white,transparent)]">
+          <div className="absolute inset-x-[-50vw] -top-32 -bottom-48 mask-[linear-gradient(transparent,white,white)] dark:mask-[linear-gradient(transparent,white,transparent)] lg:left-[calc(50%+14rem)] lg:right-0 lg:-top-32 lg:-bottom-32 lg:mask-none lg:dark:mask-[linear-gradient(white,white,transparent)]">
             <svg
               aria-hidden="true"
               viewBox="0 0 668 1069"
@@ -241,11 +241,11 @@ export const LandingHero = () => (
               className="absolute -bottom-40 -right-44"
               style={{ color: "transparent" }}
             />
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10 blur-lg" />
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10" />
-            <div className="relative rounded-2xl bg-[#0A101F]/80 ring-1 ring-white/10 backdrop-blur">
-              <div className="absolute -top-px left-20 right-11 h-px bg-gradient-to-r from-sky-300/0 via-sky-300/70 to-sky-300/0" />
-              <div className="absolute -bottom-px left-11 right-20 h-px bg-gradient-to-r from-blue-400/0 via-blue-400 to-blue-400/0" />
+            <div className="absolute inset-0 rounded-2xl bg-linear-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10 blur-lg" />
+            <div className="absolute inset-0 rounded-2xl bg-linear-to-tr from-sky-300 via-sky-300/70 to-blue-300 opacity-10" />
+            <div className="relative rounded-2xl bg-[#0A101F]/80 ring-1 ring-white/10 backdrop-blur-sm">
+              <div className="absolute -top-px left-20 right-11 h-px bg-linear-to-r from-sky-300/0 via-sky-300/70 to-sky-300/0" />
+              <div className="absolute -bottom-px left-11 right-20 h-px bg-linear-to-r from-blue-400/0 via-blue-400 to-blue-400/0" />
               <div className="pl-4 pt-4">
                 <svg
                   aria-hidden="true"

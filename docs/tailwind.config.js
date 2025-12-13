@@ -30,4 +30,9 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography"), require("tailwind-hamburgers")],
+  safelist: [
+    {
+      pattern: /tham-e-.+/,
+    },
+  ],
 };

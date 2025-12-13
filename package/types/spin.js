@@ -1,10 +1,6 @@
-const typeSelector = ".tham-e-spin";
-
-const styles = ({ size }) => {
-  const sizeSelector = `.tham-w-${size}`;
-
+const styles = () => {
   return {
-    [`.tham${sizeSelector}${typeSelector}`]: {
+    "&.tham": {
       ".tham-inner": {
         transitionDuration: "0.22s",
         transitionTimingFunction: "cubic-bezier(0.55, 0.055, 0.675, 0.19)",

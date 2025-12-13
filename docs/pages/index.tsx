@@ -127,7 +127,6 @@ function HomePage() {
         `}
       </Script>
 
-      <LandingHeader />
       <LandingHero />
 
       <div

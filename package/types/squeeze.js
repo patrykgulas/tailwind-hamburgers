@@ -1,7 +1,5 @@
-const typeSelector = ".tham-e-squeeze";
-
 const styles = () => ({
-  [`.tham${typeSelector}`]: {
+  "&.tham": {
     ".tham-inner": {
       transitionTimingFunction: "cubic-bezier(.55,.055,.675,.19)",
       transitionDuration: "75ms",

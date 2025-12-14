@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import { Lexend } from "@next/font/google";
+import { Lexend } from "next/font/google";
 
 const lexend = Lexend({ subsets: ["latin"], variable: "--font-lexend" });
 

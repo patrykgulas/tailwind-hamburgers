@@ -21,10 +21,10 @@
     "postcss": "^8.4.12",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "react-syntax-highlighter": "^15.5.0",
+    "react-syntax-highlighter": "^16.1.0",
     "tailwind-hamburgers": "*",
     "tailwindcss": "^4.1.18",
-    "turbo": "^1.6.3",
+    "turbo": "^2.6.3",
     "typescript": "^5.9.3"
   },
   "dependencies": {
@@ -32,8 +32,5 @@
     "@vercel/analytics": "^1.6.1",
     "lodash.throttle": "^4.1.1",
     "tailwind-merge": "^1.10.0"
-  },
-  "overrides": {
-    "@types/react": "19.2.7"
   }
 }
